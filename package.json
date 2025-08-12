@@ -1,12 +1,11 @@
 {
   "name": "sherin-avatar-desktop",
-  "version": "0.1.21",
+  "version": "0.1.24",
   "description": "Sherin Avatar Desktop · SCT Gen-3 client",
   "type": "commonjs",
   "main": "main.js",
   "author": {
-    "name": "Captain",
-    "email": "support@sherin.ai"
+    "name": "Captain"
   },
   "repository": {
     "type": "git",
@@ -22,7 +21,6 @@
     "appId": "ai.sherin.avatar.desktop",
     "productName": "Sherin Avatar Desktop",
     "icon": "build/icon.ico",
-    "artifactName": "Sherin-Avatar-Desktop-Setup-${version}.exe",
     "directories": {
       "output": "build-out"
     },
@@ -34,7 +32,11 @@
     },
     "nsis": {
       "oneClick": true,
-      "perMachine": false
+      "perMachine": false,
+      "artifactName": "Sherin-Avatar-Desktop-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "Sherin-Avatar-Desktop-Portable-${version}.${ext}"
     },
     "publish": [
       {

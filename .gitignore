@@ -24,9 +24,4 @@ pnpm-debug.log*
 # OS junk
 .DS_Store
 Thumbs.db
-
-# (Optional) If you later add Python bits, these are safe to keep:
-__pycache__/
-*.py[cod]
-.env
-.venv/
+*.sha256
