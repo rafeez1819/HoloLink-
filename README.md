@@ -1,4 +1,4 @@
-# HoloLink-
+# HoloLink (نورلينك)
 UAE-developed universal, multi-medium AI controller + multilingual avatar (EN/HI/AR/ML). Privacy-first, consent-first. i18n, phoneme maps, voice &amp; ASR configs. MIT.
 README opening (copy below your badges)
 HoloLink (NoorLink) is a UAE-developed AI platform that unifies communication across light/IR, RF, microwave, wired, and zero-signal paths. It includes a gentle, multilingual avatar (English, Hindi, Arabic, Malayalam) with consent-first design, visible AI badge, and invisible watermarking.
