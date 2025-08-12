@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data:;">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sharing.ai — Talk to Me</title>
+  <style>
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, 'Noto Sans Malayalam', 'Noto Naskh Arabic', sans-serif; background: #0e0e10; color: #eaeaea; }
+    header { padding: 16px 20px; background: #151518; border-bottom: 1px solid #222; display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-size: 18px; font-weight: 700; letter-spacing: .2px; }
+    .lang { display: flex; gap: 8px; align-items: center; }
+    select, button, input, textarea { background: #1d1d22; color: #fafafa; border: 1px solid #2a2a2f; padding: 8px 10px; border-radius: 10px; }
+    main { padding: 24px; display: grid; gap: 18px; grid-template-columns: 1.2fr 0.8fr; }
+    .card { background: #131317; border: 1px solid #222; border-radius: 16px; padding: 16px; }
+    .row { display: grid; gap: 10px; }
+    label { font-size: 12px; opacity: .85; }
+    .avatar { height: 220px; background: linear-gradient(180deg, #1b1b20, #0f0f12); border-radius: 16px; display: grid; place-items: center; border: 1px dashed #2a2a30; }
+    .col { display: grid; gap: 14px; }
+    .cta { display: flex; gap: 10px; flex-wrap: wrap; }
+    .muted { opacity: .8; font-size: 12.5px; }
+    .pill { padding: 4px 8px; border-radius: 999px; border: 1px solid #2a2a2f; display: inline-block; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">sharing.ai — Talk to Me <span class="pill">with HoloLink controller</span></div>
+    <div class="lang">
+      <label for="langSel">Lang</label>
+      <select id="langSel">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="ar">العربية</option>
+        <option value="ml">മലയാളം</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <section class="card col">
+      <div class="row">
+        <label>Arabic heading (display only)</label>
+        <div lang="ar" dir="rtl" style="font-size:20px;font-weight:700;">
+          شيرينغ.أي آي — الإطلاق الرسمي
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Talk to Me — type a message, then Speak</label>
+        <textarea id="ttsText" rows="4" placeholder="Type what the avatar should say..." style="resize:vertical;"></textarea>
+        <div class="cta">
+          <button id="speakBtn">Speak</button>
+          <button id="stopBtn">Stop</button>
+          <select id="phraseSel">
+            <option value="">— Quick phrases —</option>
+            <option value="Hello, I am sharing dot A I speaking with you now.">EN: Hello…</option>
+            <option value="नमस्ते, मैं अभी आपसे बात कर रही हूँ।">HI: नमस्ते…</option>
+            <option value="مرحباً، أنا أتحدث معك الآن.">AR: مرحباً…</option>
+            <option value="നമസ്കാരം, ഇപ്പോൾ ഞാൻ നിങ്ങളോടാണ് സംസാരിക്കുന്നത്.">ML: നമസ്കാരം…</option>
+          </select>
+        </div>
+        <div class="muted" id="voiceInfo">Voice: —</div>
+      </div>
+
+      <div class="row">
+        <label>Status</label>
+        <div id="status" class="muted">Ready.</div>
+      </div>
+
+      <div class="avatar">
+        <span id="connecting">Avatar area (demo)</span>
+      </div>
+    </section>
+
+    <aside class="card col">
+      <div class="row">
+        <label>Info</label>
+        <div id="info" class="muted">Select a language. Type a message. Click <b>Speak</b>.</div>
+      </div>
+      <div class="row">
+        <label>Voices detected</label>
+        <ul id="voiceList" style="margin:0;padding-left:18px;"></ul>
+      </div>
+      <div class="row">
+        <label>Notes</label>
+        <div class="muted">Uses OS voices via Web Speech Synthesis. If a voice for your language isn’t installed, it will fall back to English.</div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

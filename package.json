@@ -1,0 +1,40 @@
+{
+  "name": "sherin-avatar-desktop",
+  "version": "0.1.17",
+  "description": "Sherin Avatar Desktop  SCT Gen-3 client",
+  "type": "commonjs",
+  "main": "main.js",
+  "author": { "name": "Captain", "email": "support@sherin.ai" },
+  "repository": { "type": "git", "url": "https://github.com/rafeez1819/HoloLink-.git" },
+
+  "scripts": {
+    "start": "electron .",
+    "clean": "rimraf build-out",
+    "dist": "npm run clean && electron-builder --win",
+    "publish": "npm run clean && electron-builder --win --publish always"
+  },
+
+  "build": {
+    "appId": "ai.sherin.avatar.desktop",
+    "productName": "Sherin Avatar Desktop",
+    "icon": "build/icon.ico",
+    "artifactName": "Sherin-Avatar-Desktop-Setup-${version}.exe",
+    "directories": { "output": "build-out" },
+    "win": { "target": "nsis" },
+    "nsis": { "oneClick": true, "perMachine": false },
+    "publish": [
+      { "provider": "github", "owner": "rafeez1819", "repo": "HoloLink-" }
+    ]
+  },
+
+  "dependencies": {
+    "electron-log": "^5.4.2",
+    "electron-updater": "^6.6.2"
+  },
+
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3",
+    "rimraf": "^6.0.0"
+  }
+}

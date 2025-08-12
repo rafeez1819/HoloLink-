@@ -1,0 +1,27 @@
+{
+  "common": {
+    "app_name": "sharing.ai — Talk to Me",
+    "language": "Language",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "back": "Back",
+    "start": "Start"
+  },
+  "upload_consent": {
+    "title": "Upload Photo & Consent",
+    "desc": "(demo)",
+    "checkbox": "(demo)",
+    "deceased_mode": "(demo)",
+    "submit": "Continue"
+  },
+  "call_screen": {
+    "connecting": "Connecting…",
+    "listening": "Listening…",
+    "speaking": "Speaking…",
+    "end_call": "End Call"
+  },
+  "errors": {
+    "consent_required": "Consent is required.",
+    "network": "Network issue."
+  }
+}

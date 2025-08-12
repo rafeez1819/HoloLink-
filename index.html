@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<!-- Somewhere near the top/status line -->
+<div>
+  Gen-3 · SCT — Reasoning · 256k · <span id="version"></span>
+</div>
+
+<!-- Your existing Ping button can be reused; just keep this id -->
+<button id="pingBtn">Ping</button>
+
+<label style="user-select:none;">
+  <input type="checkbox" id="autoStart"> Auto-start on login
+</label>
+
+<!-- Make sure renderer script is included -->
+<script src="index.js"></script>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Sherin Avatar Desktop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    html,body{height:100%;margin:0;background:#0b0b0f;color:#e9e9f1;font-family:system-ui,sans-serif}
+    .wrap{height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px}
+    .btn{background:#1f6feb;color:#fff;border:0;padding:10px 16px;border-radius:8px;cursor:pointer}
+    .row{display:flex;gap:8px;align-items:center}
+    .tag{opacity:.8}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="tag">Gen-3 · SCT — Reasoning · 256k</div>
+    <button class="btn" onclick="alert('Hello Captain ✨')">Ping</button>
+    <div class="row">
+      <label>Auto-start on login:</label>
+      <input type="checkbox" id="autostart">
+    </div>
+  </div>
+  <script>
+    const box = document.getElementById('autostart');
+    (async () => { box.checked = await window.api.getAutoLaunch(); })();
+    box.addEventListener('change', async () => {
+      box.disabled = true;
+      const v = await window.api.setAutoLaunch(box.checked);
+      box.checked = v; box.disabled = false;
+    });
+  </script>
+</body>
+</html>
