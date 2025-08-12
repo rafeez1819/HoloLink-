@@ -1,7 +1,7 @@
 {
   "name": "sherin-avatar-desktop",
-  "version": "0.1.18",
-  "description": "Sherin Avatar Desktop  SCT Gen-3 client",
+  "version": "0.1.21",
+  "description": "Sherin Avatar Desktop · SCT Gen-3 client",
   "type": "commonjs",
   "main": "main.js",
   "author": {
@@ -27,7 +27,10 @@
       "output": "build-out"
     },
     "win": {
-      "target": "nsis"
+      "target": [
+        "nsis",
+        "portable"
+      ]
     },
     "nsis": {
       "oneClick": true,
